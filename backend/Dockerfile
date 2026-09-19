@@ -1,16 +1,16 @@
 # immagine di base
 FROM node:22
-# creazione della cartella di lavoro
+# cretate working directory
 RUN mkdir -p /usr/src/app
-# set della cartella di lavoro
+# set working directory
 WORKDIR /usr/src/app
-# copia del file delle dipendenze
+# copy dependency file
 COPY package.json /usr/src/app
-# installazione delle dipendenze
+# install dependency
 RUN npm install
-# copia del codice
+# copy the code
 COPY . /usr/src/app
-# esposizione della porta
+# expose port
 EXPOSE 3000
-# avvio dell'app CMD ["npm", "start"]
+# start CMD app
 CMD ["npm", "start"]

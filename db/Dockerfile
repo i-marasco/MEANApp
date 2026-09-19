@@ -1,9 +1,9 @@
-# immagine di base
+# base image
 FROM mysql:8.4
-# aggiungo variabili d'ambiente
-# nome database
+# add environmental variables
+# database name
 ENV MYSQL_DATABASE mean
-# password del database
+# db password
 ENV MYSQL_ROOT_PASSWORD=password
-# inizializzazione db
+# initialize db
 COPY ./sql-scripts/ /docker-entrypoint-initdb.d/
