@@ -15,5 +15,8 @@ services:
       - database
   database:
     build: db
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     container_name: mean-db
     restart: always
